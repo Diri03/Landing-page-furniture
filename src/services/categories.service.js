@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL_CATEGORIES = "https://lumoshive-api-furniture.vercel.app/api/category";
+const API_URL_CATEGORIES = `${import.meta.env.VITE_URL_ROOT}/category`;
 
 export const getAllCategories = async () => {
   try {

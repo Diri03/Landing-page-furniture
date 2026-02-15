@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API_URL_SUBSCRIBE =
-  "https://lumoshive-api-furniture.vercel.app/api/subscribe";
+  `${import.meta.env.VITE_URL_ROOT}/subscribe`;
 
 export const emailSubscribe = async (dataEmail) => {
   try {

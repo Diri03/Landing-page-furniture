@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL_DATA = "https://lumoshive-api-furniture.vercel.app/api/data";
+const API_URL_DATA = `${import.meta.env.VITE_URL_ROOT}/data`;
 
 export const getAllData = async () => {
   try {
