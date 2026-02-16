@@ -4,24 +4,7 @@ import StatItem from "./StatItem";
 import { getDataHeader } from "../../services/header.service";
 import { useEffect } from "react";
 import { getAllData } from "../../services/data.service";
-
-// Import icon hamburger (bisa pakai library atau SVG manual)
-const MenuIcon = () => (
-  <svg
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="white"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <line x1="3" y1="12" x2="21" y2="12"></line>
-    <line x1="3" y1="6" x2="21" y2="6"></line>
-    <line x1="3" y1="18" x2="21" y2="18"></line>
-  </svg>
-);
+import MenuIcon from "./MenuIcon";
 
 const Hero = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,7 +14,7 @@ const Hero = () => {
   const fetchHeader = async () => {
     try {
       const data = await getDataHeader();
-      setDataHeader(data || []);
+      setDataHeader(data || {});
     } catch (error) {
       console.error("Failed to fetch Header", error);
     }
@@ -40,7 +23,7 @@ const Hero = () => {
   const fetchData = async () => {
     try {
       const data = await getAllData();
-      setItemData(data || []);
+      setItemData(data || {});
     } catch (error) {
       console.error("Failed to fetch Data", error);
     }

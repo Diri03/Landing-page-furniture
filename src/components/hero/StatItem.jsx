@@ -1,4 +1,3 @@
-// Komponen kecil untuk isi Stats
 const StatItem = ({ number, label }) => {
   return (
     <div className={"flex flex-col items-center text-center px-2"}>
